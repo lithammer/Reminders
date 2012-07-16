@@ -7,11 +7,7 @@ if config.enabled and addon.playerClass == "WARLOCK" then
 		return hasPetSpells and petType == "DEMON"
 	end
 
-	local hasSpellPowerBuff = function()
-		return addon:HasAnyAura("Dark Intent") or addon:HasAnyAura("Arcane Brilliance") or addon:HasAnyAura("Burning Wrath")
-	end
-
-	addon:AddReminder("Missing Dark Intent", function() return not hasSpellPowerBuff() end, {type = "spell", spell = "Dark Intent"})
+	addon:AddReminder("Missing Dark Intent", function() return not addon:HasSpellPowerBuff() end, {type = "spell", spell = "Dark Intent"})
 	addon:AddReminder("Missing Soul Link", function() return not addon:HasAnyAura("Soul Link") and hasDemon() and addon:HasTalent(7) end, {type = "spell", spell = "Soul Link"})
 end
 
