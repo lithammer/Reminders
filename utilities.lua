@@ -1,7 +1,7 @@
 local addonName, addon = ...
 
 function addon:IsInPartyWith(class)
-	local numMembers = GetNumPartyMembers()
+	local numMembers = GetNumSubgroupMembers()
 
 	if numMembers then
 		for i = 1, numMembers do
@@ -40,16 +40,12 @@ function addon:InPVEInstance()
 	return false
 end
 
-function addon:GetTalentRank(tabIndex, talentIndex)
-	return select(5, GetTalentInfo(tabIndex, talentIndex))
-end
-
-function addon:HasTalentRank(tabIndex, talentIndex, rankRequired)
-	return self:GetTalentRank(tabIndex, talentIndex) >= (rankRequired or 1)
+function addon:HasTalent(talentIndex)
+	return select(5, GetTalentInfo(talentIndex))
 end
 
 function addon:HasGlyph(id)
-	for i = 1, 9 do
+	for i = 1, NUM_GLYPH_SLOTS do
 		if select(4, GetGlyphSocketInfo(i)) == id then
 			return true
 		end
