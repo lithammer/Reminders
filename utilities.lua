@@ -131,3 +131,35 @@ end
 function addon:ConditionColorGradient(value)
 	return addon:ColorGradient(value, 1, 0, 0, 1, 1, 0, 0, 1, 0)
 end
+
+function addon:HasStatsBuff()
+	return self:HasAnyAura({"Mark of the Wild", "Legacy of the Emperor", "Blessing of Kings"})
+end
+
+function addon:HasStaminaBuff()
+	return self:HasAnyAura({"Power Word: Fortitude", "Imp: Blood Pact", "Commanding Shout"})
+end
+
+function addon:HasAttackPowerBuff()
+	return self:HasAnyAura({"Horn of Winter", "Trueshot Aura", "Battle Shout"})
+end
+
+function addon:HasSpellPowerBuff()
+	return self:HasAnyAura({"Dark Intent", "Arcane Brilliance", "Burning Wrath"})
+end
+
+function addon:HasHasteBuff()
+	return self:HasAnyAura({"Swiftblade's Cunning", "Unleashed Rage", "Unholy Aura"})
+end
+
+function addon:HasSpellHasteBuff()
+	return self:HasAnyAura({"Moonkin Aura", "Shadowform", "Elemental Oath"})
+end
+
+function addon:HasCriticalStrikeBuff()
+	return self:HasAnyAura({"Leader of the Pack", "Elemental Oath", "Arcane Brilliance"})
+end
+
+function addon:HasMasteryBuff()
+	return self:HasAnyAura({"Legacy of the White Tiger", "Blessing of Might", "Grace of Air"})
+end
