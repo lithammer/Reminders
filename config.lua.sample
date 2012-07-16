@@ -50,5 +50,3 @@ config.shaman.thresholdTime = 10 -- Number of minutes to warn before a weapon en
 
 -- Warlock
 config.warlock.enabled = true
-config.warlock.armors = {"Demon Skin", "Fel Armor"}
-config.warlock.thresholdTime = 10 -- Number of minutes to warn before a weapon enchant expires
