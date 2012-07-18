@@ -4,7 +4,10 @@ local config = addon.config.inventory
 if config.enabled then
 	-- Bag slots
 	addon:AddReminder("Bag space", function(self)
-		local slots = MainMenuBarBackpackButton.freeSlots
+		local slots = 0
+		for i = BACKPACK_CONTAINER, NUM_BAG_SLOTS do
+			slots = slots + GetContainerNumFreeSlots(i)
+		end
 
 		if slots < 3 then
 			if slots == 0 then
