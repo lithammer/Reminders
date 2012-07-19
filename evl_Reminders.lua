@@ -39,7 +39,8 @@ addon.config = {
 	},
 
 	priest = {
-		enabled = true
+		enabled = true,
+		inners = {"Inner Fire", "Inner Will"}
 	},
 	
 	rogue = {
