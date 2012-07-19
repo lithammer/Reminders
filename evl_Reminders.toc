@@ -11,6 +11,7 @@ modules\consumables.lua
 
 modules\druid.lua
 modules\mage.lua
+modules\monk.lua
 modules\paladin.lua
 modules\priest.lua
 modules\rogue.lua
