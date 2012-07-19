@@ -60,7 +60,6 @@ addon.config = {
 	
 	warlock = {
 		enabled = true,
-		armors = {"Demon Skin", "Fel Armor"},
 		thresholdTime = 10
 	},
 }
