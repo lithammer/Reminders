@@ -14,20 +14,18 @@ h2. Modules
 
 *Druid*
 * Missing Mark of the Wild
-* Missing Thorns
 
 *Mage*
 * Armor missing (Molten Armor or Mage Armor)
+* Missing Arcane Brilliance
 
 *Paladin*
-* No active aura
-* No active seal
 * Missing blessing
 * Missing Righteous Fury
 
 *Priest*
 * Missing Power Word: Fortitude
-* Missing Inner Fire
+* Missing Inner Fire/Will
 
 *Rogue*
 * Main/Off-hand poison missing
@@ -39,9 +37,8 @@ h2. Modules
 * Main/Off-hand weapon enchant expiring soon
 
 *Warlock*
-* Missing armor (Fel Armor, Demon Skin)
-* Main/Off-hand weapon enchant missing
-* Main/Off-hand weapon enchant expiring soon
+* Missing Dark Intent
+* Missing Soul Link
 
 *Consumables*
 * Food buff expiration warning
@@ -55,6 +52,8 @@ h2. Customization
 
 You can add your own custom reminders with the following syntax:
 
-<pre>addon:AddReminder(name, event, callback, icon, attributes, tooltip, color)</pre>
+```lua
+addon:AddReminder(name, event, callback, icon, attributes, tooltip, color)</pre>
+```
 
 See existing modules for in-depth examples.
