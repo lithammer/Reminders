@@ -1,59 +1,68 @@
 Rule-based automated reminders for commonly forgotten tasks.
 
-!http://i37.tinypic.com/2lsziq9.jpg!
+![](http://i37.tinypic.com/2lsziq9.jpg)
 
-h2. Configuration
+## Configuration
 
-Copy @config.lua.sample@ to @config.lua@ and modify as required.
+Copy `config.lua.sample` to `config.lua` and modify as required.
 
-h2. Usage
+## Usage
 
 Alt + right-click a reminder icon to bring up context menu
 
-h2. Modules
+## Modules
 
-*Druid*
+**Druid**
+
 * Missing Mark of the Wild
 
-*Mage*
+**Mage**
+
 * Armor missing (Molten Armor or Mage Armor)
 * Missing Arcane Brilliance
 
-*Paladin*
+**Paladin**
+
 * Missing blessing
 * Missing Righteous Fury
 
-*Priest*
+**Priest**
+
 * Missing Power Word: Fortitude
 * Missing Inner Fire/Will
 
-*Rogue*
+**Rogue**
+
 * Main/Off-hand poison missing
 * Main/Off-hand poison expiring soon
 
-*Shaman*
+**Shaman**
+
 * Missing shield (Water Shield, Lightning Shield)
 * Main/Off-hand weapon enchant missing
 * Main/Off-hand weapon enchant expiring soon
 
-*Warlock*
+**Warlock**
+
 * Missing Dark Intent
 * Missing Soul Link
 
-*Consumables*
+**Consumables**
+
 * Food buff expiration warning
 * Flask expiration warning
 
-*General*
+**General**
+
 * Less than 3 bag-slots available
 * No bag-slots available
 
-h2. Customization
+## Customization
 
 You can add your own custom reminders with the following syntax:
 
 ```lua
-addon:AddReminder(name, event, callback, icon, attributes, tooltip, color)</pre>
+addon:AddReminder(name, event, callback, icon, attributes, tooltip, color)
 ```
 
 See existing modules for in-depth examples.
