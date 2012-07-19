@@ -145,7 +145,7 @@ function addon:HasAttackPowerBuff()
 end
 
 function addon:HasSpellPowerBuff()
-	return self:HasAnyAura({"Dark Intent", "Arcane Brilliance", "Burning Wrath"})
+	return self:HasAnyAura({"Dark Intent", "Arcane Brilliance", "Dalaran Brilliance", "Burning Wrath"})
 end
 
 function addon:HasHasteBuff()
