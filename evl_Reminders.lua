@@ -27,11 +27,13 @@ addon.config = {
 		enabled = true,
 		armors = {"Molten Armor", "Mage Armor"}
 	},
+
+	monk = {
+		enabled = true,
+	},
 	
 	paladin = {
 		enabled = true,
-		auras = {"Devotion Aura", "Retribution Aura", "Crusader Aura", "Concentration Aura", "Resistance Aura"},
-		seals = {"Seal of Righteousness", "Seal of Justice", "Seal of Insight", "Seal of Truth"},
 		blessings = {"Blessing of Might", "Blessing of Kings"},
 		righteousFury = true
 	},
