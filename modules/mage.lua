@@ -27,4 +27,9 @@ if config.enabled and addon.playerClass == "MAGE" then
 	
 	addon:AddReminder("Missing Armor", function() return not addon:HasAnyAura(config.armors) end, {type = "spell", spell1 = config.armors[1], spell2 = config.armors[2]})
 	addon:AddReminder("Less than 3 Mana Gems remaining", function(self) return missingManaGem(self) end, {type = "spell", spell = "Conjure Mana Gem"})
+	if GetSpellBookItemInfo("Dalaran Brilliance") then
+		addon:AddReminder("Missing Dalaran/Arcane Brilliance", function() return not addon:HasSpellPowerBuff() end, {type = "spell", spell1 = "Dalaran Brilliance", spell2 = "Arcane Brilliance"})
+	else
+		addon:AddReminder("Missing Arcane Brilliance", function() return not addon:HasSpellPowerBuff() end, {type = "spell", spell = "Arcane Brilliance"})
+	end
 end
