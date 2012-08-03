@@ -54,6 +54,10 @@ function addon:HasGlyph(id)
 	return false
 end
 
+function addon:MinPlayerLevel(lvl)
+	return UnitLevel("player") >= lvl
+end
+
 local fishingPole = select(17, GetAuctionItemSubClasses(1))
 local shield = select(6, GetAuctionItemSubClasses(1))
 
