@@ -133,11 +133,11 @@ function addon:ConditionColorGradient(value)
 end
 
 function addon:HasStatsBuff()
-	return self:HasAnyAura({"Mark of the Wild", "Legacy of the Emperor", "Blessing of Kings"})
+	return self:HasAnyAura({"Mark of the Wild", "Legacy of the Emperor", "Blessing of Kings", "Embrace of the Shale Spider"})
 end
 
 function addon:HasStaminaBuff()
-	return self:HasAnyAura({"Power Word: Fortitude", "Imp: Blood Pact", "Commanding Shout"})
+	return self:HasAnyAura({"Power Word: Fortitude", "Imp: Blood Pact", "Commanding Shout", "Qiraji Fortitude"})
 end
 
 function addon:HasAttackPowerBuff()
@@ -145,21 +145,21 @@ function addon:HasAttackPowerBuff()
 end
 
 function addon:HasSpellPowerBuff()
-	return self:HasAnyAura({"Dark Intent", "Arcane Brilliance", "Dalaran Brilliance", "Burning Wrath"})
+	return self:HasAnyAura({"Dark Intent", "Arcane Brilliance", "Dalaran Brilliance", "Burning Wrath", "Still Water"})
 end
 
 function addon:HasHasteBuff()
-	return self:HasAnyAura({"Swiftblade's Cunning", "Unleashed Rage", "Unholy Aura"})
+	return self:HasAnyAura({"Swiftblade's Cunning", "Unleashed Rage", "Unholy Aura", "Cackling Howl", "Serpent's Swiftness"})
 end
 
 function addon:HasSpellHasteBuff()
-	return self:HasAnyAura({"Moonkin Aura", "Shadowform", "Elemental Oath"})
+	return self:HasAnyAura({"Moonkin Aura", "Mind Quickening", "Elemental Oath"})
 end
 
 function addon:HasCriticalStrikeBuff()
-	return self:HasAnyAura({"Leader of the Pack", "Elemental Oath", "Arcane Brilliance"})
+	return self:HasAnyAura({"Legacy of the White Tiger", "Leader of the Pack", "Arcane Brilliance", "Dalaran Brilliance", "Bellowing Roar", "Furious Howl", "Terrifying Roar", "Fearless Roar", "Still Water"})
 end
 
 function addon:HasMasteryBuff()
-	return self:HasAnyAura({"Legacy of the White Tiger", "Blessing of Might", "Grace of Air"})
+	return self:HasAnyAura({"Blessing of Might", "Grace of Air", "Roar of Courage", "Spirit Beast Blessing"})
 end
