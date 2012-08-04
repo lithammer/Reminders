@@ -23,7 +23,7 @@ if config.enabled then
 	end, nil, "inv_misc_bag_13", nil, nil, true)
 	
 	-- Repair
-	local slots = {"Head", "Shoulder", "Chest", "Waist", "Legs", "Feet", "Wrist", "Hands", "MainHand", "SecondaryHand", "Ranged"}
+	local slots = {"Head", "Shoulder", "Chest", "Waist", "Legs", "Feet", "Wrist", "Hands", "MainHand", "SecondaryHand"}
 	local slotIds = {}
 
 	for _, slot in pairs(slots) do 
