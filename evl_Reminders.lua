@@ -20,7 +20,7 @@ addon.config = {
 	
 	inventory = {
 		enabled = true,
-		repairThreshold = 85
+		repairThreshold = 55
 	},
 	
 	mage = {
