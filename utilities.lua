@@ -141,7 +141,7 @@ function addon:HasStatsBuff()
 end
 
 function addon:HasStaminaBuff()
-	return self:HasAnyAura({"Power Word: Fortitude", "Imp: Blood Pact", "Commanding Shout", "Qiraji Fortitude"})
+	return self:HasAnyAura({"Power Word: Fortitude", "Dark Intent", "Imp: Blood Pact", "Commanding Shout", "Qiraji Fortitude"})
 end
 
 function addon:HasAttackPowerBuff()
