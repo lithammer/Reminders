@@ -25,7 +25,7 @@ addon.config = {
 	
 	mage = {
 		enabled = true,
-		armors = {"Molten Armor", "Mage Armor"}
+		armors = {"Molten Armor", "Mage Armor", "Frost Armor"}
 	},
 
 	monk = {
