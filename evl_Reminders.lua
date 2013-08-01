@@ -49,8 +49,6 @@ addon.config = {
 		offHandPoisons = {"Deadly Poison", "Mind-numbing Poison"},
 		throwingPoisons = {"Instant Poison", "Wound Poison"},
 		thresholdTime = 10,
-		restockThreshold = 10,
-		restockAmount = 40
 	},
 	
 	shaman = {
