@@ -47,7 +47,6 @@ addon.config = {
 		enabled = true,
 		mainHandPoisons = {"Instant Poison", "Wound Poison"},
 		offHandPoisons = {"Deadly Poison", "Mind-numbing Poison"},
-		throwingPoisons = {"Instant Poison", "Wound Poison"},
 		thresholdTime = 10,
 	},
 	
