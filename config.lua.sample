@@ -37,8 +37,8 @@ config.priest.inners = {"Inner Fire", "Inner Will"}
 
 -- Rogue
 config.rogue.enabled = true
-config.rogue.mainHandPoisons = {"Instant Poison", "Wound Poison"} -- Preferred main-hand poisons
-config.rogue.offHandPoisons = {"Deadly Poison", "Mind-numbing Poison"} -- Preferred off-hand poison
+config.rogue.mainHandPoisons = {"Deadly Poison", "Wound Poison"} -- Preferred main-hand poisons
+config.rogue.offHandPoisons = {"Mind-numbing Poison", "Crippling Poison"} -- Preferred off-hand poison
 config.rogue.thresholdTime = 10 -- Number of minutes to warn before a poison expires
 
 -- Shaman
