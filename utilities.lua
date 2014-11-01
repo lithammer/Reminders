@@ -40,8 +40,8 @@ function addon:InPVEInstance()
 	return false
 end
 
-function addon:HasTalent(talentIndex)
-	return select(5, GetTalentInfo(talentIndex))
+function addon:HasTalent(tier, column)
+	return select(5, GetTalentInfo(tier, column, 1))
 end
 
 function addon:HasGlyph(id)
@@ -149,7 +149,13 @@ function addon:HasAttackPowerBuff()
 end
 
 function addon:HasSpellPowerBuff()
-	return self:HasAnyAura({"Dark Intent", "Arcane Brilliance", "Dalaran Brilliance", "Burning Wrath", "Still Water"})
+	return self:HasAnyAura({
+		"Dark Intent",
+		"Arcane Brilliance",
+		"Dalaran Brilliance",
+		"Burning Wrath",
+		"Still Water"
+	})
 end
 
 function addon:HasHasteBuff()

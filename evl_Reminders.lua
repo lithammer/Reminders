@@ -2,7 +2,7 @@ local addonName, addon = ...
 
 addon.config = {
 	scale = 1,
-	position = {"CENTER", UIParent, "CENTER", 300, 0},
+	position = {"CENTER", UIParent, "CENTER", 0, 300},
 	
 	consumables = {
 		enabled = true,
