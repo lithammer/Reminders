@@ -22,7 +22,6 @@ config.hunter.enabled = true
 
 -- Mage
 config.mage.enabled = true
-config.mage.armors = {"Molten Armor", "Mage Armor", "Frost Armor"} -- List of armors
 
 -- Monk
 config.monk.enabled = true
