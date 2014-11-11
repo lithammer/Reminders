@@ -137,15 +137,30 @@ function addon:ConditionColorGradient(value)
 end
 
 function addon:HasStatsBuff()
-	return self:HasAnyAura({"Mark of the Wild", "Legacy of the Emperor", "Blessing of Kings", "Embrace of the Shale Spider"})
+	return self:HasAnyAura({
+		"Mark of the Wild",
+		"Legacy of the Emperor",
+		"Legacy of the White Tiger",
+		"Blessing of Kings",
+		"Embrace of the Shale Spider"
+	})
 end
 
 function addon:HasStaminaBuff()
-	return self:HasAnyAura({"Power Word: Fortitude", "Dark Intent", "Imp: Blood Pact", "Commanding Shout", "Qiraji Fortitude"})
+	return self:HasAnyAura({
+		"Power Word: Fortitude",
+		"Blood Pact",
+		"Commanding Shout",
+		"Qiraji Fortitude"
+	})
 end
 
 function addon:HasAttackPowerBuff()
-	return self:HasAnyAura({"Horn of Winter", "Trueshot Aura", "Battle Shout"})
+	return self:HasAnyAura({
+		"Horn of Winter",
+		"Trueshot Aura",
+		"Battle Shout"
+	})
 end
 
 function addon:HasSpellPowerBuff()
@@ -153,23 +168,48 @@ function addon:HasSpellPowerBuff()
 		"Dark Intent",
 		"Arcane Brilliance",
 		"Dalaran Brilliance",
-		"Burning Wrath",
+		"Serpent's Cunning",
 		"Still Water"
 	})
 end
 
 function addon:HasHasteBuff()
-	return self:HasAnyAura({"Swiftblade's Cunning", "Unleashed Rage", "Unholy Aura", "Cackling Howl", "Serpent's Swiftness"})
-end
-
-function addon:HasSpellHasteBuff()
-	return self:HasAnyAura({"Moonkin Aura", "Mind Quickening", "Elemental Oath"})
+	return self:HasAnyAura({
+		"Cackling Howl",
+		"Energizing Spores",
+		"Mind Quickening",
+		"Swiftblade's Cunning",
+		"Unholy Aura",
+		"Grace of Air"
+	})
 end
 
 function addon:HasCriticalStrikeBuff()
-	return self:HasAnyAura({"Legacy of the White Tiger", "Leader of the Pack", "Arcane Brilliance", "Dalaran Brilliance", "Bellowing Roar", "Furious Howl", "Terrifying Roar", "Fearless Roar", "Still Water"})
+	return self:HasAnyAura({
+		"Legacy of the White Tiger",
+		"Leader of the Pack",
+		"Arcane Brilliance",
+		"Dalaran Brilliance",
+		"Bellowing Roar",
+		"Furious Howl",
+		"Terrifying Roar",
+		"Fearless Roar",
+		"Still Water"
+	})
 end
 
 function addon:HasMasteryBuff()
-	return self:HasAnyAura({"Blessing of Might", "Grace of Air", "Roar of Courage", "Spirit Beast Blessing"})
+	return self:HasAnyAura({
+		"Blessing of Might",
+		"Grace of Air",
+		"Roar of Courage",
+		"Spirit Beast Blessing"
+	})
+end
+
+function addon:HasMultistrikeBuff()
+	return self:HasAnyAura({
+		"Mind Quickening",
+		"Swiftblade's Cunning",
+	})
 end
