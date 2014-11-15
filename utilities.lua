@@ -41,7 +41,7 @@ function addon:InPVEInstance()
 end
 
 function addon:HasTalent(tier, column)
-	return select(5, GetTalentInfo(tier, column, 1))
+	return select(4, GetTalentInfo(tier, column, GetSpecialization()))
 end
 
 function addon:HasGlyph(id)
