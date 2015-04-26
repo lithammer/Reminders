@@ -32,7 +32,6 @@ config.paladin.righteousFury = true
 
 -- Priest
 config.priest.enabled = true
-config.priest.inners = {"Inner Fire", "Inner Will"}
 
 -- Rogue
 config.rogue.enabled = true
