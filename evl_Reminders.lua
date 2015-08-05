@@ -45,7 +45,7 @@ addon.config = {
 	rogue = {
 		enabled = true,
 		mainHandPoisons = {"Deadly Poison", "Wound Poison"},
-		offHandPoisons = {"Mind-numbing Poison", "Crippling Poison", "Leeching Poison", "Paralytic Poison"},
+		offHandPoisons = {"Crippling Poison", "Leeching Poison", "Paralytic Poison"},
 		thresholdTime = 10,
 	},
 	

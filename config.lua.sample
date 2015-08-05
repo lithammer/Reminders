@@ -36,7 +36,7 @@ config.priest.enabled = true
 -- Rogue
 config.rogue.enabled = true
 config.rogue.mainHandPoisons = {"Deadly Poison", "Wound Poison"} -- Preferred main-hand poisons
-config.rogue.offHandPoisons = {"Mind-numbing Poison", "Crippling Poison", "Leeching Poison", "Paralytic Poison"} -- Preferred off-hand poison
+config.rogue.offHandPoisons = {"Crippling Poison", "Leeching Poison", "Paralytic Poison"} -- Preferred off-hand poison
 config.rogue.thresholdTime = 10 -- Number of minutes to warn before a poison expires
 
 -- Shaman
