@@ -7,8 +7,8 @@ if config.enabled and addon.playerClass == "PALADIN" then
 			return false
 		end
 
-		local kings = select(8, UnitAura("player", "Blessing of Kings"))
-		local might = select(8, UnitAura("player", "Blessing of Might"))
+		local kings = select(8, AuraUtil.FindAuraByName("Blessing of Kings", "player"))
+		local might = select(8, AuraUtil.FindAuraByName("Blessing of Might", "player"))
 		if kings == "player" or might == "player" then
 			return false
 		end
@@ -21,7 +21,7 @@ if config.enabled and addon.playerClass == "PALADIN" then
 			return false
 		end
 
-		local kings = select(8, UnitAura("player", "Blessing of Kings"))
+		local kings = select(8, AuraUtil.FindAuraByName("Blessing of Kings", "player"))
 		if kings == "player" then
 			return false
 		end
@@ -34,7 +34,7 @@ if config.enabled and addon.playerClass == "PALADIN" then
 			return false
 		end
 
-		local might = select(8, UnitAura("player", "Blessing of Might"))
+		local might = select(8, AuraUtil.FindAuraByName("Blessing of Might", "player"))
 		if might == "player" then
 			return false
 		end
@@ -51,6 +51,6 @@ if config.enabled and addon.playerClass == "PALADIN" then
 	end
 
 	if config.righteousFury then
-		addon:AddReminder("Missing Righteous Fury", function() return addon:InPVEInstance() and IsProtection() and not UnitAura("player", "Righteous Fury") end, {type = "spell", spell = "Righteous Fury"})
+		addon:AddReminder("Missing Righteous Fury", function() return addon:InPVEInstance() and IsProtection() and not AuraUtil.FindAuraByName("Righteous Fury", "player") end, {type = "spell", spell = "Righteous Fury"})
 	end
 end

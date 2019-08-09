@@ -169,8 +169,13 @@ function addon:AddReminder(name, callback, attributes, icon, color, tooltip, act
 
 	reminder.showMenu = showReminderMenu
 	reminder.setColor = function(...) texture:SetVertexColor(...) end
-	reminder.setIcon = function(icon) texture:SetTexture(((icon and icon:find("\\")) and "" or "Interface\\Icons\\") .. (icon or "Temp")) end
-	
+	reminder.setIcon = function(icon)
+		if type(icon) == "string" then
+			icon = ((icon and icon:find("\\")) and "" or "Interface\\Icons\\") .. (icon or "Temp")
+		end
+		texture:SetTexture(icon)
+	end
+
 	if attributes then
 		for key, value in pairs(attributes) do
 			reminder:SetAttribute(key, value)

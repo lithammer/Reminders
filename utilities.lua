@@ -22,7 +22,7 @@ function addon:HasAnyAura(names, filter)
 	end
 
 	for _, name in pairs(names) do
-		if UnitAura("player", name, nil, filter) then
+		if AuraUtil.FindAuraByName(name, "player", filter) then
 			return true
 		end
 	end

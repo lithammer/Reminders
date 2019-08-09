@@ -3,8 +3,8 @@ local config = addon.config.consumables
 
 if config.enabled then
 	local hasExpiringAura = function(name, duration)
-		local name, _, _, _, _, _, expirationTime = UnitAura("player", "Well Fed", nil, "HELPFUL")
-	
+		local name, _, _, _, _, _, expirationTime = AuraUtil.FindAuraByName("Well Fed", "player", "HELPFUL")
+
 		if name then
 			return expirationTime - GetTime() <= duration * 60
 		end

@@ -7,12 +7,11 @@ if config.enabled and addon.playerClass == "WARLOCK" then
 		return hasPetSpells and petType == "DEMON"
 	end
 
-	addon:AddReminder("Missing Dark Intent", function()
-		return not addon:HasSpellPowerBuff()
-	end, {type = "spell", spell = "Dark Intent"})
+	addon:AddReminder("Missing Demon Skin", function()
+		return not AuraUtil.FindAuraByName("Demon Skin", "player")
+	end, {type = "spell", spell = "Demon Skin"})
 
 	addon:AddReminder("Missing Soul Link", function()
-		return not (UnitAura("player", "Soul Link") or UnitAura("player", "Grimoire of Sacrifice")) and hasDemon() and addon:HasTalent(3, 1)
+		return not (AuraUtil.FindAuraByName("Soul Link", "player") or AuraUtil.FindAuraByName("Grimoire of Sacrifice", "player")) and hasDemon() and addon:HasTalent(3, 1)
 	end, {type = "spell", spell = "Soul Link"})
 end
-

@@ -1,4 +1,4 @@
-## Interface: 60100
+## Interface: 11302
 ## Title: Evl's Reminders
 ## Author: Evl
 
