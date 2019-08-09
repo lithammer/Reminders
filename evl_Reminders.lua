@@ -3,26 +3,26 @@ local addonName, addon = ...
 addon.config = {
 	scale = 1,
 	position = {"CENTER", UIParent, "CENTER", 0, 300},
-	
+
 	consumables = {
 		enabled = true,
 		foodThresholdTime = 10,
 		flaskThresholdTime = 5
 	},
-	
+
 	druid = {
 		enabled = true
 	},
-	
+
 	hunter = {
 		enabled = true
 	},
-	
+
 	inventory = {
 		enabled = true,
 		repairThreshold = 55
 	},
-	
+
 	mage = {
 		enabled = true,
 	},
@@ -30,7 +30,7 @@ addon.config = {
 	monk = {
 		enabled = true,
 	},
-	
+
 	paladin = {
 		enabled = true,
 		blessings = {"Blessing of Might", "Blessing of Kings"},
@@ -41,14 +41,14 @@ addon.config = {
 		enabled = true,
 		inners = {"Inner Fire", "Inner Will"}
 	},
-	
+
 	rogue = {
 		enabled = true,
 		mainHandPoisons = {"Deadly Poison", "Wound Poison"},
 		offHandPoisons = {"Crippling Poison", "Leeching Poison", "Paralytic Poison"},
 		thresholdTime = 10,
 	},
-	
+
 	shaman = {
 		enabled = true,
 		shields = {"Water Shield", "Lightning Shield"},
@@ -56,7 +56,7 @@ addon.config = {
 		offHandEnchants = {"Flametongue Weapon", "Windfury Weapon"},
 		thresholdTime = 10
 	},
-	
+
 	warlock = {
 		enabled = true,
 		thresholdTime = 10
@@ -78,7 +78,7 @@ local onEnter = function(self)
 	else
 		local left = self:GetAttribute("item") or self:GetAttribute("item1")
 		local button = right and "Left-click" or "Click"
-		
+
 		if left then
 			GameTooltip:AddLine(" ")
 			GameTooltip:AddLine(button .. " to use " .. left)
@@ -119,7 +119,7 @@ end
 local suppressReminder = function(self, reminder, suppressTime)
 	reminder.suppressed = true
 	reminder.suppressTime = suppressTime and (GetTime() + suppressTime) or 0
-	
+
 	addon:UpdateReminder(reminder)
 end
 
@@ -145,7 +145,7 @@ end
 function addon:AddReminder(name, callback, attributes, icon, color, tooltip, activeWhileResting)
 	local buttonName = "ReminderButton" .. frame:GetNumChildren()
 	local reminder = CreateFrame("Button", buttonName, frame, "SecureActionButtonTemplate, ActionButtonTemplate")
-	
+
 	local texture = reminder:CreateTexture(nil, "BACKGROUND")
 	texture:SetAllPoints(reminder)
 	texture:SetTexCoord(.07, .93, .07, .93)
@@ -161,7 +161,7 @@ function addon:AddReminder(name, callback, attributes, icon, color, tooltip, act
 	reminder.activeWhileResting = type(activeWhileResting) == 'number' and activeWhileResting or (activeWhileResting and 1 or 0)
 	reminder.suppressed = false
 	reminder.suppressTime = 0
-	
+
 	reminder:RegisterForClicks("AnyUp")
 	reminder:SetScript("OnEnter", onEnter)
 	reminder:SetScript("OnLeave", onLeave)
@@ -176,11 +176,11 @@ function addon:AddReminder(name, callback, attributes, icon, color, tooltip, act
 			reminder:SetAttribute(key, value)
 		end
 	end
-	
+
 	if color then
 		reminder.setColor(unpack(color))
 	end
-	
+
 	table.insert(reminders, reminder)
 
 	return reminder
@@ -190,12 +190,12 @@ function addon:UpdateReminderState(reminder, ...)
 	if reminder.suppressed and reminder.suppressTime > 0 and reminder.suppressTime < GetTime() then
 		reminder.suppressed = false
 	end
-	
+
 	local previousState = reminder.active
 	local resting = IsResting()
-	
+
 	reminder.active = not reminder.suppressed and ((resting and reminder.activeWhileResting > 0) or (not resting and reminder.activeWhileResting < 2)) and reminder.callback(reminder, ...)
-	
+
 	return previousState, reminder.active
 end
 
@@ -208,26 +208,26 @@ function addon:UpdateReminder(reminder, ...)
 end
 
 function addon:UpdateAllReminders()
-	for _, reminder in pairs(reminders)  do
+	for _, reminder in pairs(reminders) do
 		self:UpdateReminderState(reminder)
 	end
-	
+
 	self:UpdateLayout()
 end
 
 function addon:UpdateReminderIcon(reminder)
 	local icon = reminder.icon
-	
+
 	if not icon then
 		local spell = reminder:GetAttribute("spell") or reminder:GetAttribute("spell1")
-	
+
 		if spell then
 			icon = select(3, GetSpellInfo(spell))
 		else
 			icon = GetItemIcon(reminder:GetAttribute("item") or reminder:GetAttribute("item1"))
 		end
 	end
-	
+
 	if icon then
 		reminder.setIcon(icon)
 	end
@@ -252,25 +252,25 @@ function addon:UpdateLayout()
 			end
 
 			reminder:SetAlpha(1)
-			
+
 			previousReminder = reminder
 		else
 			if not inCombat then
 				reminder:Hide()
 			end
-			
+
 			reminder:SetAlpha(0)
-		end	
+		end
 	end
 end
 
 local lastUpdate = 0
 frame:SetScript("OnUpdate", function(self, elapsed)
 	lastUpdate = lastUpdate + elapsed
-	
+
 	if lastUpdate > 0.5 then
 		lastUpdate = 0
-		
+
 		addon:UpdateAllReminders()
 	end
 end)
@@ -278,13 +278,13 @@ end)
 frame:SetScript("OnEvent", function(self, event)
 	if event == "PLAYER_ENTERING_WORLD" then
 		self:UnregisterEvent(event)
-		
+
 		frame:SetWidth(36)
 		frame:SetHeight(36)
 		frame:SetScale(config.scale)
-		frame:SetPoint(unpack(config.position))		
+		frame:SetPoint(unpack(config.position))
 	end
-	
+
 	if event == "PLAYER_REGEN_ENABLED" then
 		addon:UpdateLayout()
 	else

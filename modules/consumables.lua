@@ -13,11 +13,11 @@ if config.enabled then
 	local hasExpiringFlask = function(duration)
 		for i = 1, BUFF_MAX_DISPLAY do
 			local name, _, _, _, _, _, expirationTime = UnitAura("player", i, "HELPFUL|CANCELABLE")
-	
+
 			if name then
 				if name:sub(1, 5) == "Flask" then
 					return expirationTime - GetTime() <= duration * 60
-				end			
+				end
 			else
 				return false
 			end

@@ -1,7 +1,7 @@
 local addonName, addon = ...
 local config = addon.config.mage
 
-if config.enabled and addon.playerClass == "MAGE" then	
+if config.enabled and addon.playerClass == "MAGE" then
 	if GetSpellBookItemInfo("Dalaran Brilliance") then
 		addon:AddReminder("Missing Dalaran/Arcane Brilliance", function()
 			return not addon:HasSpellPowerBuff()

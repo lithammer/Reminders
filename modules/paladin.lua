@@ -49,7 +49,7 @@ if config.enabled and addon.playerClass == "PALADIN" then
 	local IsProtection = function()
 		return GetSpecialization() == 2
 	end
-	
+
 	if config.righteousFury then
 		addon:AddReminder("Missing Righteous Fury", function() return addon:InPVEInstance() and IsProtection() and not UnitAura("player", "Righteous Fury") end, {type = "spell", spell = "Righteous Fury"})
 	end

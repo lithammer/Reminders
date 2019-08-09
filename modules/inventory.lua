@@ -21,15 +21,15 @@ if config.enabled then
 			return true
 		end
 	end, nil, "inv_misc_bag_13", nil, nil, true)
-	
+
 	-- Repair
 	local slots = {"Head", "Shoulder", "Chest", "Waist", "Legs", "Feet", "Wrist", "Hands", "MainHand", "SecondaryHand"}
 	local slotIds = {}
 
-	for _, slot in pairs(slots) do 
+	for _, slot in pairs(slots) do
 		slotIds[slot] = GetInventorySlotInfo(slot .. "Slot")
 	end
-	
+
 	local repairReminder = addon:AddReminder("Equipment damaged", function(self)
 		local minDurability = 1
 
@@ -40,7 +40,7 @@ if config.enabled then
 				minDurability = math.min(durability / maxDurability, minDurability)
 			end
 		end
-		
+
 		if minDurability < config.repairThreshold / 100 then
 			local r, g, b = addon:ConditionColorGradient(minDurability)
 			self.setColor(r, g, b)
@@ -48,11 +48,11 @@ if config.enabled then
 			return true
 		end
 	end, nil, "ability_repair", nil, nil, true)
-	
+
 	local round = function(value) return floor(value + 0.5) end
 	repairReminder:SetScript("OnEnter", function(self)
 		addon:PrepareReminderTooltip(self)
-		
+
 		GameTooltip:AddLine(" ")
 
 		for _, id in pairs(slotIds) do
@@ -60,14 +60,14 @@ if config.enabled then
 
 			if durability then
 				local percent = durability / maxDurability
-				
+
 				if percent < config.repairThreshold / 100 then
 					local link = GetInventoryItemLink("player", id)
 					local name, _, quality = GetItemInfo(link)
 					local qualityColor = ITEM_QUALITY_COLORS[quality]
 					local icon = GetItemIcon(link)
 					local r, g, b = addon:ConditionColorGradient(percent)
-				
+
 					GameTooltip:AddDoubleLine(name, math.floor((percent * 100) + 0.5) .. "%", qualityColor.r, qualityColor.g, qualityColor.b, r, g, b)
 					GameTooltip:AddTexture(icon)
 				end
