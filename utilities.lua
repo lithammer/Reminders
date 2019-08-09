@@ -40,18 +40,8 @@ function addon:InPVEInstance()
 	return false
 end
 
-function addon:HasTalent(tier, column)
-	return select(4, GetTalentInfo(tier, column, GetActiveSpecGroup()))
-end
-
-function addon:HasGlyph(id)
-	for i = 1, NUM_GLYPH_SLOTS do
-		if select(4, GetGlyphSocketInfo(i)) == id then
-			return true
-		end
-	end
-
-	return false
+function addon:HasTalent(tabIndex, talentIndex)
+	return select(5, GetTalentInfo(tabIndex, talentIndex)) > 0
 end
 
 function addon:MinPlayerLevel(lvl)

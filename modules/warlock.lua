@@ -12,6 +12,6 @@ if config.enabled and addon.playerClass == "WARLOCK" then
 	end, {type = "spell", spell = "Demon Skin"})
 
 	addon:AddReminder("Missing Soul Link", function()
-		return not (AuraUtil.FindAuraByName("Soul Link", "player") or AuraUtil.FindAuraByName("Grimoire of Sacrifice", "player")) and hasDemon() and addon:HasTalent(3, 1)
+		return not (AuraUtil.FindAuraByName("Soul Link", "player") or AuraUtil.FindAuraByName("Grimoire of Sacrifice", "player")) and hasDemon() and addon:HasTalent(2, 16)
 	end, {type = "spell", spell = "Soul Link"})
 end
